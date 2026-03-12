@@ -1,0 +1,30 @@
+{
+    "$schema": "https://turbo.build/schema.json",
+    "pipeline": {
+        "build": {
+            "dependsOn": [
+                "^build"
+            ],
+            "outputs": [
+                ".next/**",
+                "target/release/*",
+                "dist/**"
+            ]
+        },
+        "dev": {
+            "cache": false,
+            "persistent": true
+        },
+        "ingest": {
+            "cache": false,
+            "inputs": [
+                "src/**/*.py",
+                "pyproject.toml"
+            ],
+            "outputs": []
+        },
+        "test": {
+            "outputs": []
+        }
+    }
+}
